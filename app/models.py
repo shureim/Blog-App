@@ -48,18 +48,18 @@ class Subscriber(db.Model):
         db.session.add(self)
         db.session.commit()
 
-# class Blog(db.Model):
-#
-#     __tablename__ = 'blogs'
-#
-#     id = db.Column(db.Integer,primary_key=True)
-#     blog_id = db.Column(db.Integer)
-#     title = db.Column(db.String(255))
-#     blog = db.Column(db.String)
-#     posted = db.Column(db.DateTime,default=datetime.utcnow)
-#     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-#
-#
+class Blog(db.Model):
+
+    __tablename__ = 'blogs'
+
+    id = db.Column(db.Integer,primary_key=True)
+    blog_id = db.Column(db.Integer)
+    title = db.Column(db.String(255))
+    blog = db.Column(db.String)
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+
 #     def save_blog(self):
 #         db.session.add(self)
 #         db.session.commit()
