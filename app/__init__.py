@@ -7,15 +7,11 @@
 # from flask_mail import Mail
 # from flask_simplemde import SimpleMDE
 #
-#
-#
-#
-#
 # bootstrap = Bootstrap()
 # db = SQLAlchemy()
 # photos = UploadSet('photos',IMAGES)
 # mail = Mail()
-# # simple = SimpleMDE()
+# simple = SimpleMDE()
 # login_manager = LoginManager()
 # login_manager.session_protection = 'strong'
 # login_manager.login_view = 'auth.login'
@@ -33,7 +29,7 @@
 #     db.init_app(app)
 #     login_manager.init_app(app)
 #     mail.init_app(app)
-#     # simple.init_app(app)
+#     simple.init_app(app)
 #
 #     # configure UploadSet
 #     configure_uploads(app,photos)

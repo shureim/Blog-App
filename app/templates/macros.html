@@ -1,8 +1,21 @@
-<!-- {% macro displayBlogList(blog_list) %}
+<!-- {% macro displayBlogs(blog_list) %}
 
-{% for blog in blogs%}
-  {{ blog.title }}
-  {{ blog.blog}}
+{% for blog in blog_list %}
+<div class="well">
+  <h3>{{ blog.title }}</h3>
+  <br>
+  <p>{{ blog.blog}}</p>
+  {{blog.posted}}
+
+  <a href="/comment/new_comment/{{id}}">
+    <br><br>
+  <button class="btn btn-outline-info btn-sm">Comment</button></a>
+
+  <a href="/delete/{{id}}"><button class="btn btn-outline-info btn-sm">Delete Blog</button></a>
+
+
+</div>
+
 {% endfor %}
 
 {% endmacro%} -->
