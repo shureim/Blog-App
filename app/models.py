@@ -60,36 +60,36 @@ class Blog(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
-#     def save_blog(self):
-#         db.session.add(self)
-#         db.session.commit()
-#
-#     @classmethod
-#     def get_blog(cls, id):
-#         blogs = Blog.query.all()
-#         return blogs
-#
-#         # @classmethod
-#         # def get_all_blogs(cls):
-#         #     blogs = Blog.query.filter_by(id).all()
-#         #     return blogs
-#
-# class Comment(db.Model):
-#     __tablename__='comments'
-#
-#     id = db.Column(db.Integer,primary_key = True)
-#     comment = db.Column(db.String)
-#     posted = db.Column(db.DateTime,default=datetime.utcnow)
-#     blog_id = db.Column(db.Integer,db.ForeignKey("blogs.id"))
-#     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-#
-#     def save_comment(self):
-#         db.session.add(self)
-#         db.session.commit()
-#
-#     def delete_comment(self):
-#         db.session.delete(self)
-#         db.session.commit()
+    def save_blog(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_blog(cls, id):
+        blogs = Blog.query.all()
+        return blogs
+
+        # @classmethod
+        # def get_all_blogs(cls):
+        #     blogs = Blog.query.filter_by(id).all()
+        #     return blogs
+
+class Comment(db.Model):
+    __tablename__='comments'
+
+    id = db.Column(db.Integer,primary_key = True)
+    comment = db.Column(db.String)
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+    blog_id = db.Column(db.Integer,db.ForeignKey("blogs.id"))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete_comment(self):
+        db.session.delete(self)
+        db.session.commit()
 #
 # class Role(db.Model):
 #     __tablename__ = 'roles'
