@@ -9,10 +9,10 @@ class BlogForm(FlaskForm):
     blog= TextAreaField('Write a blog.',validators = [Required()])
     submit = SubmitField('Submit')
 
-# class UpdateProfile(FlaskForm):
-#     bio = TextAreaField('Tell us about you.',validators = [Required()])
-#     submit = SubmitField('Submit')
-#
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit')
+
 # class SubscriberForm(FlaskForm):
 #     email = StringField("Email Address",validators=[Required(),Email()])
 #     submit = SubmitField("Subscribe")
