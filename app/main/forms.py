@@ -21,6 +21,6 @@ class SubscriberForm(FlaskForm):
         if Subscriber.query.filter_by(email =data_field.data).first():
             raise ValidationError("Account already subscribed with that email")
 
-# class CommentForm(FlaskForm):
-#     comment = TextAreaField("Leave a Comment")
-#     submit = SubmitField('Submit')
+class CommentForm(FlaskForm):
+    comment = TextAreaField("Leave a Comment")
+    submit = SubmitField('Submit')
