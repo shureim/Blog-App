@@ -41,7 +41,7 @@ def newblog():
         #save blog instance
         new_blog.save_blog()
         subscriber = Subscriber.query.all()
-        for subscriber in subscribers:
+        for subscriber in subscriber:
 
             mail_message("New Blog ","email/new_blog",subscriber.email,blog=new_blog)
 
@@ -120,19 +120,23 @@ def update_pic(uname):
 @login_required
 def new_comment(id):
     form = CommentForm()
+    blog = Blog.query.get_or_404(id)
 
     if form.validate_on_submit():
 
-        comment_content = form.comment.data
+        comment = form.comment.data
 
-        comment = Comment(comment_content= comment_content,blog_id=id)
+        comment = Comment(comment= comment,blog_id=id)
 
         db.session.add(comment)
         db.session.commit()
+        return redirect("/comment/new/{blog_id}".format(blog_id=blog.id))
 
-    comment = Comment.query.filter_by(blog_id=id).all()
 
-    return render_template('index.html', title='New Comment', comment=comment,comment_form=form)
+    comment = Comment.query.all()
+
+
+    return render_template('comment.html', title='New Comment',blog = blog, comment=comment,comment_form=form)
 
 @main.route('/delete/<int:id>',methods=['GET','POST'])
 @login_required

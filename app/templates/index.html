@@ -1,17 +1,32 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro %}
 {% import 'bootstrap/wtf.html' as wtf%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h4>Subscribe to our Blog</h4>
+  <h4 class ="head">Subscribe to our Blog</h4>
   {{wtf.quick_form(subscriber_form)}}
   {{simplemde.load}}
   <div class="jumbotron">
     <h1> Blog website</h1>
   </div>
+  <div class="row">
+    <div class="col-md-1">
 
-  {{ macro.displayBlogs(blogs)}}
+    </div>
+    <div class="col-md-10">
+      {{ macro.displayBlogs(blogs)}}
+    </div>
+    <div class="col-md-1">
+
+    </div>
+
+  </div>
+
 
 
 
