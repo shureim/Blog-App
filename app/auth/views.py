@@ -53,8 +53,8 @@ def register_admin():
     return render_template('auth/register_admin.html',registration_form = form)
 
 
-# @auth.route('/logout')
-# @login_required
-# def logout():
-#     logout_user()
-#     return redirect(url_for("main.index"))
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))
