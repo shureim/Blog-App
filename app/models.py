@@ -37,17 +37,17 @@ class User(UserMixin,db.Model):
 
     def __repr__(self):
         return f'User {self.username}'
-#
-# class Subscriber(db.Model):
-#     __tablename__='subscribers'
-#
-#     id=db.Column(db.Integer,primary_key=True)
-#     email = db.Column(db.String(255),unique=True,index=True)
-#
-#     def save_subscriber(self):
-#         db.session.add(self)
-#         db.session.commit()
-#
+
+class Subscriber(db.Model):
+    __tablename__='subscribers'
+
+    id=db.Column(db.Integer,primary_key=True)
+    email = db.Column(db.String(255),unique=True,index=True)
+
+    def save_subscriber(self):
+        db.session.add(self)
+        db.session.commit()
+
 # class Blog(db.Model):
 #
 #     __tablename__ = 'blogs'
